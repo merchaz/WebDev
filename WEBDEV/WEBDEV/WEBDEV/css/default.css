@@ -1,0 +1,94 @@
+﻿body {
+   overflow:hidden;
+   background:#ffffff;
+}
+
+.background {
+    background: #ffffff;
+    width: 600px;
+    height: 600px;
+    margin:auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#background-img {
+    position: absolute;
+    height: 1800px;
+    width: 1800px;
+}
+
+.player {
+    position: fixed;
+}
+
+#player-img {
+    width: 50px;
+}
+
+#gongstab-img {
+    position: absolute;
+    height: 70px;
+    margin-left: 20px;
+    top: 320px;
+    left: 725px;  
+}
+
+.down {
+    animation: rotationDown 2s 1;
+}
+
+.up {
+    animation: rotationUp 2s 1;
+}
+.left {
+    animation: rotationLeft 2s 1;
+}
+.right {
+    animation: rotationRight 2s 1;
+}
+
+@keyframes rotationDown {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotationUp {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes rotationLeft {
+    from {
+        transform: rotate(150deg);
+    }
+
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes rotationRight {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.targets {
+    position: absolute;
+    height:80px;
+}

@@ -58,10 +58,10 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="index2.html" />
-    <Content Include="js\main2.js" />
     <Content Include="images\background.png" />
+    <Content Include="images\gongstab.png" />
     <Content Include="images\player.png" />
+    <Content Include="images\target.png" />
     <Content Include="index.html" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />

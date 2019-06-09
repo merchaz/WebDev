@@ -2,15 +2,21 @@
 <html>
 <head>
     <link href="css/default.css" rel="stylesheet">
-    <script src="js/main2.js"></script>
+    <script src="js/main.js"></script>
     
 </head>
-<body onload="startGame()"> <!--onkeydown="keyPressed(event)">-->
+<body onload="startGame()" onkeydown="keyPressed(event)" onkeyup="keyReleased(event)">
     <div class="background">
         <img id="background-img" src="images/background.png" alt="bg" />
+    </div>
+    <div class="gongstab">
+        <img id="gongstab-img" src="images/gongstab.png" alt="Stab" />
     </div>
     <div class="player">
         <img id="player-img" src="images/player.png" alt="Player" />
     </div>
+    <p id="demo"></p>
+    <p id="timer">0 seconds</p>
+    <p id="demo3"></p>
 </body>
 </html>
