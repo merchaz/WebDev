@@ -58,6 +58,8 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="audio\bgsound.wav" />
+    <Content Include="audio\soundgong.mp3" />
     <Content Include="images\background.png" />
     <Content Include="images\gongstab.png" />
     <Content Include="images\player.png" />

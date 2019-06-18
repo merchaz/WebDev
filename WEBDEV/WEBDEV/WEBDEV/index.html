@@ -3,20 +3,32 @@
 <head>
     <link href="css/default.css" rel="stylesheet">
     <script src="js/main.js"></script>
-    
 </head>
-<body onload="startGame()" onkeydown="keyPressed(event)" onkeyup="keyReleased(event)">
+<body onkeydown="keyPressed(event)" onkeyup="keyReleased(event)">
+    <audio autoplay loop>
+        <source src="audio/bgsound.wav" />
+    </audio>
+    <div id="pregameDiv">
+        <div id="playerSetup">
+            <p id="playerName">Name:</p>
+            <input id="playerNameTextbox" />
+        </div>
+        <button id="startGameButton" onclick="startButtonPressed()">Start</button>
+    </div>
     <div class="background">
         <img id="background-img" src="images/background.png" alt="bg" />
-    </div>
-    <div class="gongstab">
-        <img id="gongstab-img" src="images/gongstab.png" alt="Stab" />
     </div>
     <div class="player">
         <img id="player-img" src="images/player.png" alt="Player" />
     </div>
-    <p id="demo"></p>
-    <p id="timer">0 seconds</p>
-    <p id="demo3"></p>
+    <div id="infosDiv">
+        <p id="targetsLeftLabel" style="text-align:center;"></p>
+        <p id="timer" style="text-align:center;">0 seconds</p>
+    </div>
+    
+    <div id="hsDiv">
+        <h3>Highscorelist (Rank | Seconds | Name)</h3>
+        <div id="list"></div>
+    </div>
 </body>
 </html>
