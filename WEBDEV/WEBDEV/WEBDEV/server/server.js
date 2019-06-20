@@ -42,7 +42,17 @@ app.get('/', (req, res) => {
       // Neuer Score in Array einfügen
       highScores.splice(insertPos,0,{"score":newScore, "name": newName});
       // letzter Score wegschneiden
-      highScores.splice(10,1);
+        var amountToSplice = 0;
+        if (highScores.length == 10) {
+            amountToSplice = 10
+        }
+        else {
+            amountToSplice = highScores.length;
+        }
+        if (highScores[highScores.length - 1].name == "dummy") {
+            amountToSplice--;
+        }
+      highScores.splice(amountToSplice, 1);
       res.json(highScores);
       fs.writeFile('highscores.json', JSON.stringify(highScores) , (err) => {
         if (err){

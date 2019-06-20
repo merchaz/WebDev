@@ -5,6 +5,7 @@ var targetAmount;
 var targetsLeft;
 var timer;
 var totalSeconds;
+var totalMinutes;
 var canMove;
 var gameStarted;
 var playerName;
@@ -30,14 +31,17 @@ function startGame() {
     background.style.left = "-200px";
     targetAmount = 9;
     timer = 0;
-    totalSeconds = 0;    
+    totalSeconds = 0;   
+    totalMinutes = 0;
     setupHitboxes();
     const listDiv = document.getElementById('list');1
-    let url = "http://127.0.0.1:8080/?score=" + 9999 + "&name=" + "default";
+    let url = "http://127.0.0.1:8080/?score=" + 9999 + "&name=" + "dummy";
     fetch(url)
         .then(response => response.json())
         .then(data => listDiv.innerHTML = renderHighScoreList(data))
         .catch(error => listDiv.innerHTML = "Error: " + error);
+
+
 
     targets = new Array();    
     spawnTargets(targetAmount);
@@ -76,9 +80,12 @@ function setupHitboxes() {
 }
 
 function setTime() {
+    if (timer == 59) {
+        totalMinutes++;
+    }
     ++timer;
     timer = pad(timer % 60);
-    document.getElementById("timer").innerHTML =  timer + " seconds";
+    document.getElementById("timer").innerHTML = totalMinutes + ":" + timer + " seconds";
 }
 function pad(val) {
     var valString = val + "";
@@ -198,23 +205,24 @@ function collides(a, b) {
 }
 
 function gameEnded() {
-    document.getElementById("targetsLeftLabel").innerHTML = "Finish: " + timer + " seconds";
+    document.getElementById("targetsLeftLabel").innerHTML = "Finish: " + totalMinutes + ":" + timer + " seconds";
     const listDiv = document.getElementById('list');
     clearInterval(myPlayer.timerInterval);
 
     const name = playerName;
-    const score = timer;   
+    const score = Number(timer) + Number(totalMinutes * 60);   
 
     let url = "http://127.0.0.1:8080/?score=" + score + "&name=" + name;
     fetch(url)
         .then(response => response.json())
         .then(data => listDiv.innerHTML = renderHighScoreList(data))
         .catch(error => listDiv.innerHTML = "Error: " + error);
+    
 }
 
 function renderHighScoreList(hs) {
     let out = "<ol>";
-    hs.forEach((s) => out += "<li>" + s.score + " " + s.name + "</li>")
+    hs.forEach((s) => out += "<li>" + s.score + " seconds | " + s.name + "</li>")
     out += "</ol>";
     return out;
 }
