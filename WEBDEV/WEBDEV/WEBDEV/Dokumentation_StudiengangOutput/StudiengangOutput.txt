@@ -1,0 +1,22 @@
+Titel:
+SamuraiGong
+
+Author:
+Marc Häusler
+
+Modul/Semester/Jahr:
+DEWEBMO - Development for Web and Mobile
+2. Semester, 1. Jahr
+
+Kurzbeschrieb:
+In diesem Spiel geht es darum, alle Gongs auf der Karte zu finden und mit dem Spieler
+zu schlagen -> Gong aktivieren. Es hat jeweils 10 random platzierte Gongs auf der Map verteilt.
+Sobald man startet, startet auch ein hochzählender Timer. Wenn alle Gongs geschlagen wurden,
+ist das Spiel fertig und der Score wird in der Highscoreliste eingetragen.
+Hauptkomponenten der Arbeit: Animationen zum Gong schlagen, Bewegung des Hintergrunds,
+Hitboxkollision, Soundimplementation, Node JS Highscoreliste
+
+Geistigem Eigentum:
+Alles selber gemacht, ausser die Hintergrundmusik:
+https://soundcloud.com/itsrudeboy/eternal-youth
+Eternal Youth von RUDE
